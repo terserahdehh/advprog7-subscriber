@@ -86,4 +86,8 @@ This is the place for you to write reflections:
 
 #### Reflection Subscriber-1
 
+1. RwLock allows several parts of the program to read notifications at the same time. Reading is a common operation so this improves efficiency. A Mutex would block access for all operations, even when just reading, which is less optimal.
+
+2. Rust doesn't allow mutable statics by default to ensure safety. Instead of letting a static variable be freely mutable, Rust forces us to use patterns like lazy_static with synchronization or interior mutability. This makes sure any changes are safe and controlled, unlike in Java where static variables can be mutated without extra checks.
+
 #### Reflection Subscriber-2
