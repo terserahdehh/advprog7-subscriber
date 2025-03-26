@@ -91,3 +91,9 @@ This is the place for you to write reflections:
 2. Rust doesn't allow mutable statics by default to ensure safety. Instead of letting a static variable be freely mutable, Rust forces us to use patterns like lazy_static with synchronization or interior mutability. This makes sure any changes are safe and controlled, unlike in Java where static variables can be mutated without extra checks.
 
 #### Reflection Subscriber-2
+
+1. I didn't explore src/lib.rs because the tutorial focused mainly on controllers, models, and services. The instructions didn't require any changes in src/lib.rs, so I concentrated on the files specified by the tutorial.
+
+2. The observer pattern simplifies adding subscribers since each instance registers for notifications, which are then broadcast to all observers. When running multiple main app instances, the same approach applies, though managing shared state might need extra handling.
+
+3. I haven't tried making my own tests or improving the Postman documentation yet. I understand that adding tests would help catch errors early and make the API more reliable, and clearer documentation would show how to use the API better. I focused on what the tutorial asked me to do, so I haven't done those extra steps.
