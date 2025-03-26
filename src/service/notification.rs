@@ -54,7 +54,7 @@ impl NotificationService {
             ))
         }
     }
-    
+
     pub fn unsubscribe(product_type: &str) -> Result<SubscriberRequest> {
         let product_type_clone = String::from(product_type);
         return thread::spawn(move || Self::unsubscribe_request(product_type_clone))
@@ -90,6 +90,11 @@ impl NotificationService {
                 e.to_string()
             ))
         }
+    }
+    
+    pub fn receive_notification(payload: Notification) -> Result<Notification> {
+        let subscriber_request: Notification = NotificationRepository::add(payload);
+        return Ok(subscriber_request);
     }
 }
 
